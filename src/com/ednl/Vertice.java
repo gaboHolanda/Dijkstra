@@ -9,10 +9,12 @@ public class Vertice implements Comparable<Vertice> {
 	private boolean visited;
 	private Vertice previosVertex;
 	private double minDistance = Double.MAX_VALUE;
+	public boolean temPosto;
 
-	public Vertice(String name) {
+	public Vertice(String name, boolean temPosto) {
 		this.nome = name;
 		this.arestas = new ArrayList<>();
+		this.temPosto = temPosto;
 	}
 
 	public void addVisinho(Aresta aresta) {
@@ -41,6 +43,10 @@ public class Vertice implements Comparable<Vertice> {
 
 	public void setPreviosVertex(Vertice previosVertex) {
 		this.previosVertex = previosVertex;
+	}
+
+	public boolean temPosto(){
+		return this.temPosto;
 	}
 
 	public double getMinDistance() {
